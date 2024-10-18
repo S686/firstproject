@@ -1,0 +1,10 @@
+/Users/ans/Downloads/springboot/firstproject/firstproject/src/main/java/com/kt/edu/firstproject/FirstprojectApplication.java
+/Users/ans/Downloads/springboot/firstproject/firstproject/src/main/java/com/kt/edu/firstproject/api/ArticleApiController.java
+/Users/ans/Downloads/springboot/firstproject/firstproject/src/main/java/com/kt/edu/firstproject/api/FirstApiController.java
+/Users/ans/Downloads/springboot/firstproject/firstproject/src/main/java/com/kt/edu/firstproject/config/SwaggerConfig.java
+/Users/ans/Downloads/springboot/firstproject/firstproject/src/main/java/com/kt/edu/firstproject/controller/ArticleController.java
+/Users/ans/Downloads/springboot/firstproject/firstproject/src/main/java/com/kt/edu/firstproject/controller/FirstController.java
+/Users/ans/Downloads/springboot/firstproject/firstproject/src/main/java/com/kt/edu/firstproject/dto/ArticleForm.java
+/Users/ans/Downloads/springboot/firstproject/firstproject/src/main/java/com/kt/edu/firstproject/entity/Article.java
+/Users/ans/Downloads/springboot/firstproject/firstproject/src/main/java/com/kt/edu/firstproject/repository/ArticleRepository.java
+/Users/ans/Downloads/springboot/firstproject/firstproject/src/main/java/com/kt/edu/firstproject/service/ArticleService.java

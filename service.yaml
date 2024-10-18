@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: firstproject
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30000 # 원하는 노드 포트
+  selector:
+    app: firstproject
