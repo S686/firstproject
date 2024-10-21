@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: firstproject
-        image: s686/firstproject:latest
+        image: ghcr.io/s686/firstproject:latest
         ports:
         - containerPort: 8080
