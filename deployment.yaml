@@ -12,6 +12,8 @@ spec:
       labels:
         app: firstproject
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
       - name: firstproject
         image: ghcr.io/s686/firstproject:latest
