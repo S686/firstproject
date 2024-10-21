@@ -27,3 +27,9 @@ jobs:
         run: |
           docker tag firstproject $IMAGE_NAME
           docker push $IMAGE_NAME
+          
+      - name: Push Docker image to GitHub Registry
+        run: |
+          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          docker tag firstproject ghcr.io/s686/firstproject:latest
+          docker push ghcr.io/s686/firstproject:latest
