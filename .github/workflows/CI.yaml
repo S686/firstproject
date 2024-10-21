@@ -33,3 +33,12 @@ jobs:
           echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
           docker tag firstproject ghcr.io/s686/firstproject:latest
           docker push ghcr.io/s686/firstproject:latest
+
+      - name: Tag and Push Docker image to Nexus
+        run: |
+          # Nexus에 로그인을 위한 코드
+          echo "${{ secrets.NEXUS_TOKEN }}" | podman login localhost:8082 -u "admin" --password-stdin
+
+          # 이미지 태그 및 푸시
+          podman tag firstproject localhost:8082/firstproject:latest
+          podman push localhost:8082/firstproject:latest
