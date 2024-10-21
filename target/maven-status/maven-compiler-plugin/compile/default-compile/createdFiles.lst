@@ -1,2 +1,9 @@
+com/kt/edu/firstproject/service/ArticleService.class
+com/kt/edu/firstproject/dto/ArticleForm.class
 com/kt/edu/firstproject/FirstprojectApplication.class
+com/kt/edu/firstproject/api/FirstApiController.class
+com/kt/edu/firstproject/controller/ArticleController.class
+com/kt/edu/firstproject/entity/Article.class
+com/kt/edu/firstproject/repository/ArticleRepository.class
+com/kt/edu/firstproject/controller/FirstController.class
 com/kt/edu/firstproject/api/ArticleApiController.class

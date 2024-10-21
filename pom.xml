@@ -12,9 +12,9 @@
 	<groupId>com.kt.edu</groupId>
 	<artifactId>firstproject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>firstproject</name>
 	<description>first project for Spring Boot</description>
-	<url/>
+	<packaging>jar</packaging>
+
 	<licenses>
 		<license/>
 	</licenses>
@@ -123,6 +123,19 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>com.kt.edu.firstproject.FirstprojectApplication</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
