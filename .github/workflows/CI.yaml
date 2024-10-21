@@ -36,7 +36,7 @@ jobs:
 
       - name: Tag and Push Docker image to Nexus
         run: |
-          podman login localhost:8081 -u "${{ secrets.NEXUS_USERNAME }}" --password "${{ secrets.NEXUS_PASSWORD }}"
+          podman login localhost:8081 -u "${{ secrets.NEXUS_USERNAME }}" --password "${{ secrets.NEXUS_TOKEN }}"
           
           # 이미지 태그 및 푸시
           podman tag firstproject localhost:8081/firstproject:latest
