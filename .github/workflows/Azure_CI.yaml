@@ -9,7 +9,6 @@ on:
         default: "main"
 
 env:
-  GIT_OPS_NAME: vivaldi-ops
   OPS_DIR: charts/${{ github.event.repository.name }}
   
 jobs:
@@ -46,8 +45,8 @@ jobs:
       uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
       with:
         images: ${{ github.repository }}
-        tags: ${{ env.NOW }} # ${{ github.event.inputs.name }}
-  
+        tags: ${{ env.NOW }}
+
     - name: Build and Push to Azure Container Registry
       uses: docker/build-push-action@v2
       with:
@@ -73,27 +72,18 @@ jobs:
     - name: Setup Kustomize
       uses: imranismail/setup-kustomize@v1
 
-    - name: Checkout kustomize repository
-      uses: actions/checkout@v2
-      with:
-        repository: ${{ github.repository_owner }} # /${{ env.GIT_OPS_NAME }}
-        ref: master
-        token: ${{ secrets.ACTION_TOKEN }} # ${{ secrets.GITHUB_TOKEN }} 
-        path: ${{ env.GIT_OPS_NAME }}
-        
     - name: Update Kubernetes resources
       run: |
         pwd
-        cd ${{ env.GIT_OPS_NAME }}/${{ env.OPS_DIR }}
+        cd ${{ env.OPS_DIR }}
         kustomize edit set image ${{ secrets.AZURE_URL }}/${{ steps.meta.outputs.tags }}
         cat kustomization.yaml
 
     - name: Commit manifest files
       run: |
-        cd ${{ env.GIT_OPS_NAME }}/${{ env.OPS_DIR }}
+        cd ${{ env.OPS_DIR }}
         git checkout HEAD
         git config --global user.email "antaeho0117@gmail.com"
         git config --global user.name "ath"
         git commit -am 'update image tag  ${{ env.NOW }} from Github Action'
-        cat kustomization.yaml
         git push origin HEAD
